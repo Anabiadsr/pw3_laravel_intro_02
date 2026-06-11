@@ -8,7 +8,7 @@ use Symfony\Contracts\Service\Attribute\Required;
 class OficinaController extends Controller
 {
     public function index(){
-        $oficinas = Oficina::orderBy('nome_oficina')->get();
+        $oficinas = Oficina::orderBy('nome')->get();
         return view('oficinas.index', compact('oficinas'));
     }
     public function store(Request $request){
