@@ -7,6 +7,10 @@ use App\Http\Controllers\OficinaControllerController;
 
 use Illuminate\Support\Facades\Route;
 
+Route::get('/', function(){
+   return view('home');
+});
+
 Route::get('/livros', [LivroController::class, 'index']);
 Route::post('/livros', [LivroController::class, 'store']);
 
