@@ -14,7 +14,7 @@
      
         <nav>
             <a href="/">Início</a>
-            <a href="/Landing">Landing</a>
+            <a href="/landing">Landing</a>
             <a href="/admin">Admin</a>
         </nav>
     </div>
