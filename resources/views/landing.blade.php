@@ -3,7 +3,19 @@
 @section('title', 'Landing Page do Projeto')
 
 @section('content')
-   <section class="relative overflow-hidden rounded-3xl bg-slate-950 px-8 py-16 text-white shadow-2xl">
+    <header class="mb-6 rounded-2xl border border-slate-200 bg-white/90 px-5 py-4 shadow-sm backdrop-blur">
+    <div class="flex flex-wrap items-center justify-between gap-3">
+        <a href="#" class="text-lg font-black tracking-tight text-slate-900">NovaWave</a>
+        <nav class="flex flex-wrap items-center gap-2 text-sm">
+            <a href="#funcionalidades" class="rounded-lg px-3 py-2 text-slate-600 hover:bg-slate-100 hover:text-slate-900">Funcionalidades</a>
+            <a href="#diferenciais" class="rounded-lg px-3 py-2 text-slate-600 hover:bg-slate-100 hover:text-slate-900">Diferenciais</a>
+            <a href="/contato" class="rounded-lg px-3 py-2 text-slate-600 hover:bg-slate-100 hover:text-slate-900">Contato</a>
+            <a href="/sobre" class="rounded-lg px-3 py-2 text-slate-600 hover:bg-slate-100">Sobre</a>
+        </nav>
+    </div>
+</header>
+
+    <section class="relative overflow-hidden rounded-3xl bg-slate-950 px-8 py-16 text-white shadow-2xl">
     <div class="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-cyan-400/30 blur-3xl"></div>
     <div class="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-fuchsia-500/20 blur-3xl"></div>
 
@@ -19,12 +31,13 @@
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
             <a href="#funcionalidades" class="rounded-xl bg-cyan-400 px-6 py-3 font-semibold text-slate-900 hover:bg-cyan-300">Ver funcionalidades</a>
-            <a href="#contato" class="rounded-xl border border-slate-500 px-6 py-3 font-semibold text-slate-100 hover:bg-slate-800">Falar com a equipe</a>
+            <a href="/equipe" class="rounded-xl border border-slate-500 px-6 py-3 font-semibold text-slate-100 hover:bg-slate-800">Falar com a equipe</a>
         </div>
+    
     </div>
 </section>
 
-  <section id="funcionalidades" class="mt-10">
+<section id="funcionalidades" class="mt-10">
     <div class="mb-5 flex items-end justify-between gap-4">
         <h3 class="text-2xl font-bold text-slate-900 md:text-3xl">Funcionalidades principais</h3>
         <p class="text-sm text-slate-500">Foco em clareza, desempenho e usabilidade</p>
@@ -72,8 +85,8 @@
         Apresente seu projeto com uma landing page bem estruturada e preparada para evoluir.
     </p>
     <div class="mt-6 flex flex-wrap gap-3">
-        <a href="#" class="rounded-xl bg-slate-900 px-6 py-3 font-semibold text-white hover:bg-slate-700">Solicitar demonstração</a>
+        <a href="/usuarios/novo" class="rounded-xl bg-slate-900 px-6 py-3 font-semibold text-white hover:bg-slate-700">Solicitar demostração</a>
         <a href="#" class="rounded-xl border border-slate-300 px-6 py-3 font-semibold text-slate-700 hover:bg-slate-100">Ver documentação</a>
     </div>
 </section>
-@endsection
+

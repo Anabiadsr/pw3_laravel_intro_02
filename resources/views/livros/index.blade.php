@@ -22,19 +22,22 @@
         @csrf
 
         <div>
-        <label>Título:</label><input type="text" name="titulo">
+            <label>Título:</label>
+            <input type="text" name="titulo">
         </div>
 
         <br>
 
         <div>
-        <label>Autor:</label><input type="text" name="autor">
+            <label>Autor:</label>
+            <input type="text" name="autor">
         </div>
 
         <br>
 
         <div>
-        <label>Ano Publicação:</label><input type="integer" name="ano_publicacao">
+            <label>Ano de Publicação:</label>
+            <input type="number" name="ano_publicacao">
         </div>
 
         <br>
