@@ -11,13 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('produtos', function (Blueprint $table) {
-            $table->id();
-            $table->string('nome');
-            $table->decimal('preco', 10, 2);
-            $table->integer('estoque')->default(0);
-            $table->timestamps();
-        });
+       Schema::create('eventos', function (Blueprint $table) {
+    $table->id();
+    $table->string('titulo');
+    $table->string('local');
+    $table->integer('vagas');
+    $table->decimal('preco_inscricao', 10, 2)->default(0.00);
+    $table->timestamps();
+   });
     }
 
     /**
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('produtos');
+        Schema::dropIfExists('eventos');
     }
 };

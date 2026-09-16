@@ -4,6 +4,7 @@ use App\Http\Controllers\LivroController;
 use App\Models\Livro;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\EventoController;
 
 Route::get('/', function () {
     return view('home');
@@ -41,9 +42,12 @@ Route::get('/livros', [LivroController::class, 'index']);
 
 Route::post('/livros', [LivroController::class, 'store']);
 
-
-
-
 // Rotas de criação de usuários
 Route::get('/usuarios/novo', [UserController::class, 'create']);
 Route::post('/usuarios', [UserController::class, 'store']);
+
+// Rotas da Agenda de Eventos
+
+Route::get('/eventos', [EventoController::class, 'index']);
+Route::get('/eventos/novo', [EventoController::class, 'create']);
+Route::post('/eventos', [EventoController::class, 'store']);
