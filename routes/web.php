@@ -1,53 +1,40 @@
 <?php
-use App\Models\User;
-use App\Http\Controllers\LivroController;
-use App\Models\Livro;
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\LivroController;
 use App\Http\Controllers\EventoController;
+use App\Models\User;
 
 Route::get('/', function () {
     return view('home');
-}); 
+})->name('home');
+
+Route::view('/landing', 'landing')->name('landing');
 
 
-Route::view('/landing', 'landing');
-// Rota da listagem e painel administrativo (GET)
-Route::get('/admin', [UserController::class, 'index']);
+Route::get('/admin', [UserController::class, 'index'])->name('admin.dashboard');
+Route::get('/usuarios/novo', [UserController::class, 'create'])->name('usuarios.create');
+Route::post('/usuarios', [UserController::class, 'store'])->name('usuarios.store');
 
-Route::get('/usuarios/novo', [UserController::class, 'create']);
+Route::get('/usuarios/{id}/editar', [UserController::class, 'edit'])->name('usuarios.edit');
+Route::put('/usuarios/{id}', [UserController::class, 'update'])->name('usuarios.update');
 
-Route::post('usuarios', [UserController::class, 'store']);
 
-// Route::get('/sobre', function () {
-//     return view('sobre.sobre');
-// });
-// Route::get('/equipe', function () {
-//     return view('equipe.equipe');
-// });
-// Route::get('/contato', function () {
-//     return view('contato.contato');
-// });
+Route::get('/livros', [LivroController::class, 'index'])->name('livros.index');
+Route::post('/livros', [LivroController::class, 'store'])->name('livros.store');
+
+
+Route::get('/eventos', [EventoController::class, 'index'])->name('eventos.index');
+Route::get('/eventos/novo', [EventoController::class, 'create'])->name('eventos.create');
+Route::post('/eventos', [EventoController::class, 'store'])->name('eventos.store');
+
 
 Route::get('/teste-orm', function () {
     User::create([
         'name' => 'Ana Clara Santos',
         'email' => 'ana.santos@escola.sp.gov.br',
-        "password" => '12345678'
+        'password' => bcrypt('12345678')
     ]);
     return User::all();
 });
-
-Route::get('/livros', [LivroController::class, 'index']);
-
-Route::post('/livros', [LivroController::class, 'store']);
-
-// Rotas de criação de usuários
-Route::get('/usuarios/novo', [UserController::class, 'create']);
-Route::post('/usuarios', [UserController::class, 'store']);
-
-// Rotas da Agenda de Eventos
-
-Route::get('/eventos', [EventoController::class, 'index']);
-Route::get('/eventos/novo', [EventoController::class, 'create']);
-Route::post('/eventos', [EventoController::class, 'store']);
