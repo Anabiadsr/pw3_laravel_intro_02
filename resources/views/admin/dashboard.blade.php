@@ -5,7 +5,6 @@
 @section('content')
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Topo do Painel com Ações -->
     <section class="flex flex-wrap items-center justify-between gap-4">
         <div>
             <h2 class="text-3xl font-bold text-slate-900">Painel Administrativo</h2>
@@ -15,8 +14,6 @@
             Novo Usuário
         </a>
     </section>
-
-    <!-- Barra de Filtro e Busca -->
     <section class="mt-6 bg-white p-4 rounded-xl shadow-sm ring-1 ring-slate-200">
         <form action="/admin" method="GET" class="flex flex-wrap items-center gap-3">
             <div class="flex-1 min-w-[240px]">
@@ -39,8 +36,6 @@
             @endif
         </form>
     </section>
-
-    <!-- Tabela Dinâmica de Registros -->
     <section class="mt-6 overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-slate-200">
         <div class="border-b border-slate-200 px-6 py-4 flex justify-between items-center">
             <h3 class="font-semibold text-slate-800">Lista de Usuários</h3>
